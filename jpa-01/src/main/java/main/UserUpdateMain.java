@@ -14,12 +14,12 @@ public class UserUpdateMain {
         EntityTransaction transaction = entityManager.getTransaction();
         try {
             transaction.begin();
-            User user = entityManager.find(User.class, "user@user.com");
+            User user = entityManager.find(User.class, "user@user.com"); //find하고
             if (user == null) {
                 System.out.println("User 없음");
             } else {
                 String newName = "이름" + (System.currentTimeMillis() % 100);
-                user.changeName(newName);
+                user.changeName(newName); //name 필드를 변경
             }
             transaction.commit();
         } catch (Exception ex) {
