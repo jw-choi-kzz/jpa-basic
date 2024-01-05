@@ -1,5 +1,7 @@
 package jpabasic.reserve.app;
-
+/*
+ * 저장 - EntityManager #persist(Object entity)
+ */
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import jpabasic.reserve.domain.User;
@@ -12,7 +14,7 @@ public class NewUserService {
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
-            em.persist(user);
+            em.persist(user); //user 객체 저장
             tx.commit();
         } catch(Exception ex) {
             tx.rollback();
