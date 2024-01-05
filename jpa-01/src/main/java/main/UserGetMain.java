@@ -14,7 +14,8 @@ public class UserGetMain {
         EntityTransaction transaction = entityManager.getTransaction();
         try {
             transaction.begin();
-            User user = entityManager.find(User.class, "user@user.com");
+            User user = entityManager.find(User.class, "user@user.com"); //find 메서드 사용: 조회.
+            //인자 1로 mapping class 지정, 인자 2로 @ID 매핑된 PK
             if (user == null) {
                 System.out.println("User 없음");
             } else {
