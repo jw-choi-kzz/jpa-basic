@@ -11,7 +11,7 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <hiberate.version>6.0.0.Final</hiberate.version>
+        <hiberate.version>6.0.0.Final</hiberate.version><!--hibernate-core만 있어도 되는 버전-->
     </properties>
 
     <dependencies>
@@ -22,9 +22,9 @@
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-hikaricp</artifactId>
+            <artifactId>hibernate-hikaricp</artifactId><!--커넥션-->
             <version>${hiberate.version}</version>
-        </dependency>
+        </dependency><!--JPA 구현체로 hibernate 많이 사용함-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
