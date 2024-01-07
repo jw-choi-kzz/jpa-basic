@@ -84,6 +84,7 @@ public class MainRole {
         try {
             tx.begin();
             Role role = em.find(Role.class, roleId);
+            //Set 수정: add(), remove()
             role.getPermissions().add("F3");
             role.getPermissions().remove("F1");
             tx.commit();
@@ -102,7 +103,7 @@ public class MainRole {
         try {
             tx.begin();
             Role role = em.find(Role.class, roleId);
-            role.setPermissions(Set.of("F4", "F5"));
+            role.setPermissions(Set.of("F4", "F5")); //this.permissions= newPermisions;
             tx.commit();
         } catch (Exception ex) {
             tx.rollback();
@@ -119,7 +120,7 @@ public class MainRole {
         try {
             tx.begin();
             Role role = em.find(Role.class, roleId);
-            role.revokeAll();
+            role.revokeAll(); //this.permissions.clear() = select하여 Set 데이터에 접근 후 delete
             tx.commit();
         } catch (Exception ex) {
             tx.rollback();
