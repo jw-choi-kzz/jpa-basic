@@ -32,8 +32,8 @@ public class MainQuestion1 {
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
-            Question q = new Question(id, "질문", List.of("보기1", "보기2"));
-            em.persist(q);
+            Question q = new Question(id, "질문", List.of("보기1", "보기2")); //List 매핑
+            em.persist(q); //저장. insert
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
