@@ -31,10 +31,10 @@ public class MainDocument1 {
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
-            Map<String, String> props = new HashMap<>();
+            Map<String, String> props = new HashMap<>(); //Map으로 만들어서
             props.put("p1", "v1");
-            props.put("p2", "v2");
-            Document doc = new Document(id, "제목", "내용", props);
+            props.put("p2", "v2"); //값을 넣고
+            Document doc = new Document(id, "제목", "내용", props); //Map을 포함한 doc라는 객체 생성
             em.persist(doc);
             tx.commit();
         } catch (Exception e) {
