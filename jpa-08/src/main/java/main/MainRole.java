@@ -46,7 +46,7 @@ public class MainRole {
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
-            Role role = new Role(roleId, "관리자", Set.of("F1", "F2"));
+            Role role = new Role(roleId, "관리자", Set.of("F1", "F2")); //Set.of 사용
             em.persist(role);
             tx.commit();
         } catch (Exception ex) {
@@ -63,9 +63,9 @@ public class MainRole {
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
-            Role role = em.find(Role.class, roleId);
+            Role role = em.find(Role.class, roleId); //처음에는 role 조회
             logger.info("role id: {}", role.getId());
-            for (String perm : role.getPermissions()) {
+            for (String perm : role.getPermissions()) { //role.getPermissions() perm 필요한 시점에 select  
                 logger.info("perm: {}", perm);
             }
             tx.commit();
