@@ -14,11 +14,11 @@ public class Role {
 
     @ElementCollection
     @CollectionTable(
-            name = "role_perm",
-            joinColumns = @JoinColumn(name = "role_id")
+            name = "role_perm", //collection table 이름 지정
+            joinColumns = @JoinColumn(name = "role_id") //join에 사용할 column 지정
     )
-    @Column(name = "perm")
-    private Set<String> permissions = new HashSet<>();
+    @Column(name = "perm") //실제 값을 담고 있는 column
+    private Set<String> permissions = new HashSet<>(); //Set<String>
 
     protected Role() {}
 
