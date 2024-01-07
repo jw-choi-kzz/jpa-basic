@@ -17,7 +17,7 @@ public class Question {
             name = "question_choice",
             joinColumns = @JoinColumn(name = "question_id")
     )
-    @OrderColumn(name = "idx")
+    @OrderColumn(name = "idx") //List의 idx값을 저장할 column을 지정함
     @Column(name = "text")
     private List<String> choices = new ArrayList<>();
 
