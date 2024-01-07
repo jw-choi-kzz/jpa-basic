@@ -17,7 +17,7 @@ public class Document {
             name = "doc_prop",
             joinColumns = @JoinColumn(name = "doc_id")
     )
-    @MapKeyColumn(name = "name")
+    @MapKeyColumn(name = "name") //Map의 Key로 사용할 값 지정
     @Column(name = "value")
     private Map<String, String> props = new HashMap<>();
 
